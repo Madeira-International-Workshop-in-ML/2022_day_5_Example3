@@ -19,11 +19,6 @@ class CatDogClassifier(private val context: Context) {
     private val modelPath: String = "catsdogs.tflite"
     private lateinit var interpreter: Interpreter
 
-    private val INPUT_SIZE = 224
-    private val PIXEL_SIZE = 3
-    private val OUTPUT_CLASSES_COUNT = 2
-    private val THRESHOLD = 0.95
-
     /**
      * Loads the SavedModel
      */
@@ -157,6 +152,13 @@ class CatDogClassifier(private val context: Context) {
         } else {
             ""
         }
+    }
+
+    companion object {
+        const val PIXEL_SIZE = 3
+        const val INPUT_SIZE = 224
+        const val OUTPUT_CLASSES_COUNT = 2
+        const val THRESHOLD = 0.95
     }
 
 }
